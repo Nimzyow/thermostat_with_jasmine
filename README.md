@@ -1,4 +1,4 @@
-###Thermostat
+####Thermostat
 
 A thermostat application made in made with Javascript and tested with Jasmine.
 
