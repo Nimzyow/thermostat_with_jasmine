@@ -30,23 +30,8 @@ $(document).ready(function() {
   });
 
   checkColor = () => {
-    if (thermostat.currentTempertaure < thermostat.min_energy_usage) {
-      $("#background")
-        .removeClass()
-        .addClass("lowBackground");
-      return;
-    } else if (thermostat.currentTempertaure < thermostat.medium_energy_usage) {
-      $("#background")
-        .removeClass()
-        .addClass("medBackground");
-      return;
-    } else if (
-      thermostat.currentTempertaure >= thermostat.medium_energy_usage
-    ) {
-      $("#background")
-        .removeClass()
-        .addClass("highBackground");
-      return;
-    }
+    $("#background")
+      .removeClass()
+      .addClass(thermostat.energyUsage());
   };
 });

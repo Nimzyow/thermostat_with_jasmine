@@ -11,7 +11,7 @@
   margin-right: 20px;
 }
 
-.medBackground {
+.medium-usage {
   background-color: rgb(71, 216, 95);
   display: flex;
   flex-direction: column;
@@ -19,7 +19,7 @@
   height: 100vh;
 }
 
-.lowBackground {
+.low-usage {
   background-color: rgb(0, 174, 255);
   display: flex;
   flex-direction: column;
@@ -27,7 +27,7 @@
   height: 100vh;
 }
 
-.highBackground {
+.high-usage {
   background-color: rgb(206, 37, 37);
   display: flex;
   flex-direction: column;
