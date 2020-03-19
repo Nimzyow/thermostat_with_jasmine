@@ -19,9 +19,25 @@
     <div id="background" class="medium-usage">
       <h1>Thermostat!</h1>
       <section>
-        <h1>Current temperature: <span id="current-tempertaure"></span></h1>
+        <div
+          style="display: flex; flex-direction: column; align-items: center;"
+        >
+          <h1>
+            Current temperature in <span id="city">London</span>:<span
+              id="current-temperature"
+              >20</span
+            >
+          </h1>
+          <select id="current-city">
+            <option value="london">London</option>
+            <option value="kyoto">Kyoto</option>
+            <option value="paris">Paris</option>
+            <option value="tokyo">Tokyo</option>
+          </select>
+        </div>
       </section>
-      <h2 id="temp">20</h2>
+
+      <h1>Inside temperature is <span id="temp">20</span> degrees C</h1>
       <div style="display: flex; margin: 20px;">
         <button class="incDecButton" id="decrementButton">
           -
