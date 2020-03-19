@@ -1,9 +1,15 @@
 $(document).ready(function() {
   let thermostat = new Thermostat();
 
-  //  $(".medBackground")
-  //    .$("#temp")
-  //    .text(thermostat.currentTempertaure);
+  data = $.parseJSON(
+    $.ajax({
+      url: `http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=${APIKEY}&units=metric`,
+      dataType: "json",
+      async: false
+    }).responseText
+  );
+
+  console.log(data.main.temp);
 
   $("#incrementButton").on("click", function() {
     thermostat.increase();
