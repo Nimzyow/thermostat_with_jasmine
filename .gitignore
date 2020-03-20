@@ -1,3 +1,5 @@
 /APIKEY
 
 /node_modules
+
+/config/default.json
