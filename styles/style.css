@@ -98,6 +98,15 @@
   color: #e84342;
 }
 
+.save {
+  border: 1px solid black;
+  flex-grow: 0.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(37, 179, 84);
+}
+
 .button-placement {
   border: 1px solid black;
   flex-grow: 1;

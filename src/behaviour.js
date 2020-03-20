@@ -11,8 +11,6 @@ $(document).ready(function() {
 
   $("#current-temperature").text(Math.round(data.main.temp) + " degrees");
 
-  console.log(data.main.temp);
-
   $("#current-city").change(function() {
     let city = $("#current-city").val();
     $.get(
@@ -60,5 +58,29 @@ $(document).ready(function() {
     $("#background")
       .removeClass()
       .addClass(thermostat.energyUsage());
+  };
+
+  $("#saveButton").on("click", function() {
+    saveData();
+  });
+
+  saveData = async () => {
+    let city = $("#current-city").val();
+    console.log("hello there");
+    try {
+      await $.post({
+        url: "http://localhost:4000/",
+        traditional: true,
+        dataType: "json",
+        contentType: "application/json",
+        data: JSON.stringify({
+          temperature: thermostat.currentTempertaure,
+          city: city
+        })
+      });
+      console.log("success");
+    } catch (error) {
+      console.error(error);
+    }
   };
 });

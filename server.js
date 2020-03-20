@@ -16,6 +16,7 @@ app.get("/", (req, res) => {
 });
 
 app.post("/", async (req, res) => {
+  console.log("i have reached the post request");
   const { temperature, city } = req.body;
 
   try {
