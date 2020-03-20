@@ -12,11 +12,10 @@
 }
 
 .medium-usage {
-  background-color: rgb(71, 216, 95);
+  background-color: rgb(230, 236, 231);
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
 }
 
 .low-usage {
@@ -28,9 +27,89 @@
 }
 
 .high-usage {
-  background-color: rgb(206, 37, 37);
+  background-color: #ff3031;
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 100vh;
+}
+
+.outer-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  margin: 10px;
+}
+
+.main-console {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2.5%;
+  width: 95%;
+  align-items: center;
+  border: 2px solid black;
+}
+
+.main-temp-display {
+  font-size: 200%;
+  color: #e84342;
+  font-weight: bold;
+}
+
+.control-container {
+  border: 1px solid black;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  height: 75vh;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.plus-minus {
+  border: 1px solid black;
+  flex-grow: 1;
+  display: flex;
+}
+
+.power-saving-on {
+  border: 1px solid black;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.outside-temp {
+  border: 1px solid black;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.reset {
+  border: 1px solid black;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #e84342;
+}
+
+.button-placement {
+  border: 1px solid black;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-font-size {
+  font-size: 50px;
+}
+
+.power-saving-size {
+  font-size: 30px;
 }

@@ -9,7 +9,7 @@ $(document).ready(function() {
     }).responseText
   );
 
-  $("#current-temperature").text(data.main.temp + " degrees C");
+  $("#current-temperature").text(Math.round(data.main.temp) + " degrees");
 
   console.log(data.main.temp);
 
@@ -18,8 +18,8 @@ $(document).ready(function() {
     $.get(
       `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKEY}&units=metric`,
       function(data) {
-        $("#current-temperature").text(data.main.temp);
-        $("#city").text(city);
+        $("#current-temperature").text(Math.round(data.main.temp) + " degrees");
+        $("#city").text(city.charAt(0).toUpperCase() + city.substring(1));
       }
     );
   });
@@ -38,9 +38,17 @@ $(document).ready(function() {
 
   $("#powerOnOff").on("click", function(e) {
     thermostat.powerSavingSwitch();
-    thermostat.powerSavingOn
-      ? $("#powerOnOff").text("Power Saving On")
-      : $("#powerOnOff").text("Power Saving Off");
+    if (thermostat.powerSavingOn) {
+      $(".power-saving-size").remove();
+      $('<p class="power-saving-size">Power Saving On</p>').appendTo(
+        ".power-saving-on"
+      );
+    } else {
+      $(".power-saving-size").remove();
+      $('<p class="power-saving-size">Power Saving Off</p>').appendTo(
+        ".power-saving-on"
+      );
+    }
   });
 
   $("#resetButton").on("click", function() {

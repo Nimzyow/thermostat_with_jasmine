@@ -2,52 +2,59 @@
 <html>
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Thermostat</title>
     <link rel="stylesheet" href="./styles/style.css" />
     <link
-      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
       rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+      integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
+      crossorigin="anonymous"
     />
-    <style>
-      body {
-        font-family: "Roboto";
-        font-size: 22px;
-      }
-    </style>
   </head>
   <body>
-    <div id="background" class="medium-usage">
-      <h1>Thermostat!</h1>
-      <section>
-        <div
-          style="display: flex; flex-direction: column; align-items: center;"
-        >
+    <div class="outer-container">
+      <div id="background" class="medium-usage">
+        <div class="main-console">
           <h1>
-            Current temperature in <span id="city">London</span>:<span
-              id="current-temperature"
-              >20</span
-            >
+            <span class="main-temp-display" id="temp">20</span>
           </h1>
-          <select id="current-city">
-            <option value="london">London</option>
-            <option value="kyoto">Kyoto</option>
-            <option value="paris">Paris</option>
-            <option value="tokyo">Tokyo</option>
-          </select>
         </div>
-      </section>
-
-      <h1>Inside temperature is <span id="temp">20</span> degrees C</h1>
-      <div style="display: flex; margin: 20px;">
-        <button class="incDecButton" id="decrementButton">
-          -
-        </button>
-        <button class="incDecButton" id="incrementButton">
-          +
-        </button>
+        <div class="control-container">
+          <div class="plus-minus">
+            <div id="decrementButton" class="button-placement">
+              <p class="button-font-size">
+                -
+              </p>
+            </div>
+            <div id="incrementButton" class="button-placement">
+              <p class="button-font-size">
+                +
+              </p>
+            </div>
+          </div>
+          <div id="powerOnOff" class="power-saving-on">
+            <p class="power-saving-size">Power Saving On</button>
+          </div>
+          <div class="outside-temp">
+            <span
+              >Outside temperature in
+              </span
+            >
+            
+            <h1 id="city">London</h1>
+            <h2 id="current-temperature"></h2>
+            <h5>Tap on city below for city selection</h5>
+            <select id="current-city">
+              <option value="london">London</option>
+              <option value="kyoto">Kyoto</option>
+              <option value="paris">Paris</option>
+              <option value="tokyo">Tokyo</option>
+            </select>
+          </div>
+          <div class="reset" id="resetButton"><p>reset</p></div>
+        </div>
       </div>
-      <button id="resetButton">reset</button>
-      <button id="powerOnOff">Power Saving On</button>
     </div>
     <script
       src="https://code.jquery.com/jquery-3.4.1.js"
@@ -60,7 +67,3 @@
     <script src="src/Thermostat.js"></script>
   </body>
 </html>
-
-"border-radius: 50%; background-color: black; color: white; font-weight: bold;
-font-size: large; text-align: center; font-size: 25px; cursor: pointer; width:
-40px; margin-right: 20px;"
