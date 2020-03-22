@@ -68,16 +68,10 @@ $(document).ready(function() {
     let city = $("#current-city").val();
     console.log("hello there");
     try {
-      await $.post({
-        url: "http://localhost:4000/",
-        traditional: true,
-        dataType: "json",
-        contentType: "application/json",
-        data: JSON.stringify({
-          temperature: thermostat.currentTempertaure,
-          city: city
-        })
+      await $.post("http://localhost:9292/", {
+        temperature: thermostat.currentTempertaure
       });
+
       console.log("success");
     } catch (error) {
       console.error(error);
