@@ -1,5 +1,24 @@
 $(document).ready(function() {
   let thermostat = new Thermostat();
+  let datares;
+  getData = () => {
+    $.get("http://localhost:9292/thermostat", function(data) {
+      console.log("here is some data, yay");
+      console.log(data);
+    });
+  };
+
+  getData();
+
+  $(function() {
+    $.ajax({
+      type: "GET",
+      url: "http://localhost:9292/test",
+      success: function() {
+        console.log("success");
+      }
+    });
+  });
 
   data = $.parseJSON(
     $.ajax({
@@ -68,8 +87,10 @@ $(document).ready(function() {
     let city = $("#current-city").val();
     console.log("hello there");
     try {
-      await $.post("http://localhost:9292/", {
-        temperature: thermostat.currentTempertaure
+      console.log("we have hac ahv");
+      await $.post("http://localhost:9292/thermostat", {
+        temperature: thermostat.currentTempertaure,
+        city: city
       });
 
       console.log("success");

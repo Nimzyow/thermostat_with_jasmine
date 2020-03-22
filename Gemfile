@@ -6,4 +6,4 @@ gem 'rake'
 gem 'sinatra'
 gem 'pg'
 gem 'sinatra-flash'
-
+gem 'sinatra-jsonp'
